@@ -12,7 +12,8 @@ class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
-        navigationController.navigationBar.isHidden = true
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.prefersLargeTitles = true
         self.navigationController = navigationController
     }
 
