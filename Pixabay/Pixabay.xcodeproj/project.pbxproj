@@ -27,6 +27,7 @@
 		75CD8DF6275E53CC0066685D /* BaseURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD8DF5275E53CC0066685D /* BaseURLs.swift */; };
 		75CD8DF8275E5D0D0066685D /* ImagesRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD8DF7275E5D0D0066685D /* ImagesRequestDTO.swift */; };
 		75CD8DFA275E5D4B0066685D /* ImagesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD8DF9275E5D4B0066685D /* ImagesResponseDTO.swift */; };
+		75ECB64E275EA5CF0051071F /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		75CD8DF5275E53CC0066685D /* BaseURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLs.swift; sourceTree = "<group>"; };
 		75CD8DF7275E5D0D0066685D /* ImagesRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesRequestDTO.swift; sourceTree = "<group>"; };
 		75CD8DF9275E5D4B0066685D /* ImagesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesResponseDTO.swift; sourceTree = "<group>"; };
+		75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		7A981037E7F360DC259F5818 /* Pods_Pixabay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pixabay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CFADFAD9D8E93FA228C7C9 /* Pods-Pixabay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pixabay.debug.xcconfig"; path = "Target Support Files/Pods-Pixabay/Pods-Pixabay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			children = (
 				752322E9275E1703005E149D /* Application */,
 				752322D4275E16F2005E149D /* Presentation */,
+				75ECB64B275E9F270051071F /* Domain */,
 				75CD8DEE275E50C50066685D /* Data */,
 				752322EA275E1726005E149D /* Infrastructure */,
 				752322F1275E1899005E149D /* Resources */,
@@ -131,16 +134,8 @@
 			children = (
 				752322F0275E186D005E149D /* ViewController */,
 				752322EF275E1856005E149D /* View */,
-				752322EE275E184D005E149D /* ViewModel */,
 			);
 			path = Gallery;
-			sourceTree = "<group>";
-		};
-		752322EE275E184D005E149D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		752322EF275E1856005E149D /* View */ = {
@@ -192,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				752322EC275E17FC005E149D /* Gallery */,
+				75ECB64C275EA5B80051071F /* ViewModel */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -263,6 +259,37 @@
 				75CD8DF9275E5D4B0066685D /* ImagesResponseDTO.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		75ECB64B275E9F270051071F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				75ECB64F275EA5F40051071F /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		75ECB64C275EA5B80051071F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		75ECB64F275EA5F40051071F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				75ECB650275EA5FC0051071F /* User */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		75ECB650275EA5FC0051071F /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		A43069FB5F1F1809F04E06A6 /* Frameworks */ = {
@@ -411,6 +438,7 @@
 				75CD8DD0275E1D860066685D /* BaseViewController.swift in Sources */,
 				75CD8DF8275E5D0D0066685D /* ImagesRequestDTO.swift in Sources */,
 				75CD8DFA275E5D4B0066685D /* ImagesResponseDTO.swift in Sources */,
+				75ECB64E275EA5CF0051071F /* GalleryViewModel.swift in Sources */,
 				75CD8DD8275E20740066685D /* UIViewController+Extension.swift in Sources */,
 				75CD8DD3275E1E850066685D /* MainCoordinator.swift in Sources */,
 			);
