@@ -11,16 +11,27 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryViewController" customModule="Pixabay" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="vge-JM-WN6" id="gMZ-Xq-Rra"/>
+                <outlet property="searchBar" destination="2xE-Fk-h0U" id="tUK-mb-nPp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="oqI-yt-M0r"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" interfaceStyle="dark" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Images, Categories" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Fk-h0U">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
+                </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vge-JM-WN6">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <rect key="frame" x="0.0" y="95" width="414" height="801"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yhD-mM-wEt">
                         <size key="itemSize" width="128" height="128"/>
@@ -34,9 +45,12 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vge-JM-WN6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3V3-O4-2Pk"/>
+                <constraint firstItem="2xE-Fk-h0U" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7aG-gQ-h9D"/>
+                <constraint firstItem="2xE-Fk-h0U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ISi-VK-aT5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vge-JM-WN6" secondAttribute="trailing" id="K6o-qf-TrZ"/>
+                <constraint firstItem="vge-JM-WN6" firstAttribute="top" secondItem="2xE-Fk-h0U" secondAttribute="bottom" id="Lsa-w3-8hm"/>
                 <constraint firstAttribute="bottom" secondItem="vge-JM-WN6" secondAttribute="bottom" id="aNm-2X-xjx"/>
-                <constraint firstItem="vge-JM-WN6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oCm-Ft-M8s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2xE-Fk-h0U" secondAttribute="trailing" id="tDo-ID-igf"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </view>

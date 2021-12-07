@@ -15,6 +15,7 @@ class GalleryViewController: BaseViewController {
             configureHierarchy()
         }
     }
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Variables
     var viewModel = GalleryViewModel()
 

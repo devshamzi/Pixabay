@@ -20,9 +20,12 @@ class GalleryViewModel: BaseViewModel {
     var onChange = PublishSubject<State>()
     var dataSource: [Images] = []
     var page = 1
+    var perPage = 20
+    var reachEnd = false
 
     // MARK: - Functions
     func getImages()  {
+        guard (page == 1) || (reachEnd == false) else { return }
         GalleryService.shared.fetchImages(page: self.page)
             .subscribe(onNext: { [weak self] (result) in
                 guard let self = self else {return}
@@ -33,6 +36,11 @@ class GalleryViewModel: BaseViewModel {
                             self.dataSource = data
                         } else {
                             self.dataSource.append(contentsOf: data)
+                        }
+                        if data.count < self.perPage {
+                            self.reachEnd = true
+                        } else {
+                            self.reachEnd = false
                         }
                     }
                     self.onChange.onNext(.success)
