@@ -19,16 +19,21 @@ class GalleryViewModel: BaseViewModel {
     // MARK: - Variables
     var onChange = PublishSubject<State>()
     var dataSource: [Images] = []
+    var page = 1
 
     // MARK: - Functions
     func getImages()  {
-        GalleryService.shared.fetchImages()
+        GalleryService.shared.fetchImages(page: self.page)
             .subscribe(onNext: { [weak self] (result) in
                 guard let self = self else {return}
                 switch result {
                 case .success(let value):
                     if let data = value.toDomain().hits {
-                        self.dataSource = data
+                        if self.page == 1 {
+                            self.dataSource = data
+                        } else {
+                            self.dataSource.append(contentsOf: data)
+                        }
                     }
                     self.onChange.onNext(.success)
 

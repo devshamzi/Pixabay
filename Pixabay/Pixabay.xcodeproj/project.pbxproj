@@ -390,9 +390,9 @@
 			);
 			mainGroup = 752322C9275E16F2005E149D;
 			packageReferences = (
-				75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage.git" */,
 			);
 			productRefGroup = 752322D3275E16F2005E149D /* Products */;
 			projectDirPath = "";
@@ -665,7 +665,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -673,7 +673,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -681,7 +681,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
@@ -694,17 +694,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		75D5662E275F575300BF9983 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 75D5662D275F575300BF9983 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxSwift;
 		};
 		75D56631275F58A900BF9983 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 75D56630275F58A900BF9983 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		75D5663B275FB3BD00BF9983 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 75D5663A275FB3BD00BF9983 /* XCRemoteSwiftPackageReference "SDWebImage.git" */;
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -55,9 +55,14 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
             .dequeueReusableCell(GalleryCollectionViewCell.self,
                                  for: indexPath)
         cell.model = self.viewModel.dataSource[indexPath.row]
-
         return cell
-
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == self.viewModel.dataSource.count - 1{
+            self.viewModel.page += 1
+            self.viewModel.getImages()
+        }
     }
 }
 
