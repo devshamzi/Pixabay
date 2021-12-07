@@ -24,14 +24,15 @@ class GalleryViewModel: BaseViewModel {
     var reachEnd = false
 
     // MARK: - Functions
-    func getImages()  {
+    func getImages(searchTerm: String? = nil)  {
         guard (page == 1) || (reachEnd == false) else { return }
-        GalleryService.shared.fetchImages(page: self.page)
+        GalleryService.shared.fetchImages(page: self.page, searchTerm: searchTerm)
             .subscribe(onNext: { [weak self] (result) in
                 guard let self = self else {return}
                 switch result {
                 case .success(let value):
                     if let data = value.toDomain().hits {
+                        self.dataSource = searchTerm == nil ? self.dataSource : []
                         if self.page == 1 {
                             self.dataSource = data
                         } else {

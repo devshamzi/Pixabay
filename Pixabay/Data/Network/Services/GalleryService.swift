@@ -13,12 +13,13 @@ struct GalleryService: NetworkService {
 
     private init() { }
 
-    func fetchImages(page: Int) -> Observable<AFResult<ImagesResponseDTO>> {
+    func fetchImages(page: Int,searchTerm: String?) -> Observable<AFResult<ImagesResponseDTO>> {
         let apiKey = AppConfiguration().apiKey
         return request(config: ApiDataNetworkConfig(url: GalleryRoute.getPhotos.path,
                                                     headers: [:],
                                                     queryParameters: ["key": apiKey,
-                                                                      "page":"\(page)"],
+                                                                      "page":"\(page)",
+                                                                      "q":searchTerm],
                                                     isQueryStringURL: true))
     }
 }

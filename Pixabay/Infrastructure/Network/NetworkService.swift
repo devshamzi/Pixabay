@@ -24,8 +24,8 @@ extension NetworkService {
                 // append to URL
                 var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
 
-                let queryItems = config.queryParameters.map{
-                    return URLQueryItem(name: "\($0)", value: "\($1)")
+                let queryItems = config.queryParameters.compactMap{
+                    return URLQueryItem(name: "\($0)", value: "\($1 ?? "")")
                 }
                 urlComponents?.queryItems = queryItems
                 url = (urlComponents?.url)!

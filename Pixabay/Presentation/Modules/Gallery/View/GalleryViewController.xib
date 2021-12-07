@@ -20,18 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Images, Categories" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Fk-h0U">
-                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Images, Categories" showsCancelButton="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Fk-h0U">
+                    <rect key="frame" x="0.0" y="44" width="414" height="98"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
-                        <string>Title</string>
-                        <string>Title</string>
-                        <string>Title</string>
-                        <string>Title</string>
+                        <string>Fashion</string>
+                        <string>Nature</string>
+                        <string>Science</string>
+                        <string>Travel</string>
                     </scopeButtonTitles>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vge-JM-WN6">
-                    <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                    <rect key="frame" x="0.0" y="142" width="414" height="754"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yhD-mM-wEt">
                         <size key="itemSize" width="128" height="128"/>

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class GalleryViewController: BaseViewController {
 
@@ -16,6 +18,7 @@ class GalleryViewController: BaseViewController {
         }
     }
     @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: - Variables
     var viewModel = GalleryViewModel()
 
@@ -23,6 +26,7 @@ class GalleryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pixabay"
+        bindUI() 
         subscribe()
         viewModel.getImages()
 
@@ -36,6 +40,17 @@ class GalleryViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
 
+    }
+}
+
+// MARK: - Search Bar Delegate
+extension GalleryViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -83,4 +98,15 @@ extension GalleryViewController {
             }
         }).disposed(by: bag)
     }
+    
+    func bindUI() {
+        searchBar.rx.text
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] query in
+                self.viewModel.getImages(searchTerm: query)
+            })
+            .disposed(by: bag)
+    }
+
 }
