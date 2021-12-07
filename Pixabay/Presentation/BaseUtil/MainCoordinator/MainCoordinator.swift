@@ -16,10 +16,4 @@ class MainCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
         self.navigationController = navigationController
     }
-
-    func goTohome() {
-        let galleryVC = GalleryViewController.instantiate()
-        galleryVC.coordinator = self
-        navigationController.pushViewController(galleryVC, animated: true)
-    }
 }
