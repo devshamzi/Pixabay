@@ -22,9 +22,7 @@ extension GalleryViewController {
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             
             let groupHeight = NSCollectionLayoutDimension.fractionalWidth(0.2)
-            
-            
-            
+
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: groupHeight)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)

@@ -9,69 +9,72 @@ import UIKit
 
 class GalleryViewController: BaseViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             configureHierarchy()
         }
     }
+    // MARK: - Variables
+    var viewModel = GalleryViewModel()
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pixabay"
-        // Do any additional setup after loading the view.
+        subscribe()
+        viewModel.getImages()
 
     }
 
+    // MARK: - Private Functions
     private func configureHierarchy() {
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView.register(GalleryCollectionViewCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
 
     }
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return self.viewModel.dataSource.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
-
-
-        switch indexPath.row%10 {
-        case 0:
-            cell.backgroundColor = .blue
-        case 1:
-            cell.backgroundColor = .yellow
-        case 2:
-            cell.backgroundColor = .green
-        case 3:
-            cell.backgroundColor = .orange
-        case 4:
-            cell.backgroundColor = .systemBlue
-        case 5:
-            cell.backgroundColor = .darkGray
-        case 6:
-            cell.backgroundColor = .systemPink
-        case 7:
-            cell.backgroundColor = .systemRed
-        case 8:
-            cell.backgroundColor = .magenta
-        case 9:
-            cell.backgroundColor = .systemIndigo
-        default:
-            cell.backgroundColor = .white
-        }
+        let cell = collectionView
+            .dequeueReusableCell(GalleryCollectionViewCell.self,
+                                 for: indexPath)
+        cell.model = self.viewModel.dataSource[indexPath.row]
 
         return cell
+
+    }
+}
+
+// MARK: - Bindable
+extension GalleryViewController {
+    func subscribe() {
+        viewModel.onChange.subscribe(onNext: { [weak self] (state) in
+            guard let self = self else { return }
+            switch state {
+            case .success:
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+
+            case .failure(let message):
+                print(message)
+            }
+        }).disposed(by: bag)
     }
 }

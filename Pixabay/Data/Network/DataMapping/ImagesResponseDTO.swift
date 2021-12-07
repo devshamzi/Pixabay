@@ -8,19 +8,19 @@
 import Foundation
 
 // MARK: - Data Transfer Object
-struct ImagesResponseDTO: Decodable {
+struct ImagesResponseDTO: Codable {
     private enum CodingKeys: String, CodingKey {
         case total
         case totalHits
-        case hits
+        case data = "hits"
     }
     let total: Int
     let totalHits: Int
-    let hits: [HitsDTO]
+    let data: [HitsDTO]
 }
 
 extension ImagesResponseDTO {
-    struct HitsDTO: Decodable {
+    struct HitsDTO: Codable {
         private enum CodingKeys: String, CodingKey {
             case id
             case pageURL
@@ -70,3 +70,40 @@ extension ImagesResponseDTO {
         let userImageURL: String?
     }
 }
+
+extension ImagesResponseDTO {
+    func toDomain() -> ImagePage {
+        return .init(total: total,
+                     totalHits: totalHits,
+                     hits: data.map { $0.toDomain() })
+    }
+}
+
+
+extension ImagesResponseDTO.HitsDTO {
+    func toDomain() -> Images {
+        return .init(id: id,
+                     pageURL: pageURL,
+                     type: type,
+                     tags: tags,
+                     previewURL: previewURL,
+                     previewWidth: previewWidth,
+                     previewHeight: previewHeight,
+                     webformatURL: webformatURL,
+                     webformatWidth: webformatWidth,
+                     webformatHeight: webformatHeight,
+                     largeImageURL: largeImageURL,
+                     imageWidth: imageWidth,
+                     imageHeight: imageHeight,
+                     imageSize: imageSize,
+                     views: views,
+                     downloads: downloads,
+                     collections: collections,
+                     likes: likes,
+                     comments: comments,
+                     user_id: user_id,
+                     user: user,
+                     userImageURL: userImageURL)
+    }
+}
+

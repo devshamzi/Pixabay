@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImagesModel {
+struct Images {
 
     let id: Int?
     let pageURL: String?
@@ -31,4 +31,10 @@ struct ImagesModel {
     let user_id: Int?
     let user: String?
     let userImageURL: String?
+}
+
+struct ImagePage {
+    let total: Int?
+    let totalHits: Int?
+    let hits: [Images]?
 }

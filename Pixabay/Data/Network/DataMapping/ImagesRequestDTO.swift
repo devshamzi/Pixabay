@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImagesRequestDTO: Encodable {
+struct ImagesRequestDTO: Codable {
     let query: String
     let page: Int
 }
