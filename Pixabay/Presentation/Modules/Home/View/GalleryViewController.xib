@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,6 +22,7 @@
             <subviews>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Images" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-Fk-h0U">
                     <rect key="frame" x="0.0" y="44" width="414" height="98"/>
+                    <color key="tintColor" red="0.0" green="0.68198317289999999" blue="0.93601566550000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
                         <string>All</string>
@@ -45,7 +46,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vge-JM-WN6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3V3-O4-2Pk"/>
-                <constraint firstItem="2xE-Fk-h0U" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="7aG-gQ-h9D"/>
+                <constraint firstItem="2xE-Fk-h0U" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="7aG-gQ-h9D"/>
                 <constraint firstItem="2xE-Fk-h0U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ISi-VK-aT5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vge-JM-WN6" secondAttribute="trailing" id="K6o-qf-TrZ"/>
                 <constraint firstItem="vge-JM-WN6" firstAttribute="top" secondItem="2xE-Fk-h0U" secondAttribute="bottom" id="Lsa-w3-8hm"/>

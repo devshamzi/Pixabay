@@ -41,17 +41,6 @@ class GalleryViewController: BaseViewController {
     }
 }
 
-// MARK: - Search Bar Delegate
-extension GalleryViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        dismiss(animated: true, completion: nil)
-    }
-}
-
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
