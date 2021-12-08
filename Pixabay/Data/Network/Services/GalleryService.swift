@@ -13,7 +13,7 @@ struct GalleryService: NetworkService {
 
     private init() { }
 
-    func fetchImages(page: Int,pageSize: Int? = 20, param: [String:String?]) -> Observable<AFResult<ImagesResponseDTO>> {
+    func fetchImages(page: Int,pageSize: Int? = 20, param: [String: String?]) -> Observable<AFResult<ImagesResponseDTO>> {
         var parmeter = param.compactMapValues { $0 }
         parmeter["key"] = AppConfiguration().apiKey
         parmeter["page"] = "\(page)"

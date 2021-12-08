@@ -10,11 +10,13 @@ import Foundation
 struct FilterRequestModel {
     var searchTerm: String? = nil
     var category: String?
+    var safesearch: Bool? = true
 
     var dictionaryRepresentation: [String: String?] {
         return [
             "q" : searchTerm,
-            "category" : category
+            "category" : category,
+            "safesearch": safesearch?.description
         ]
     }
 }

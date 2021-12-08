@@ -17,7 +17,11 @@ class GalleryViewController: BaseViewController {
             configureHierarchy()
         }
     }
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+
+        }
+    }
     
     // MARK: - Variables
     var viewModel = GalleryViewModel()
@@ -60,7 +64,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.dataSource.count
+        return self.viewModel.dataSource?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,15 +72,19 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView
             .dequeueReusableCell(GalleryCollectionViewCell.self,
                                  for: indexPath)
-        cell.model = self.viewModel.dataSource[indexPath.row]
+        cell.model = self.viewModel.dataSource?[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == self.viewModel.dataSource.count - 1{
+        if indexPath.row == (self.viewModel.dataSource?.count ?? 0) - 1{
             self.viewModel.page += 1
             self.viewModel.getImages()
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let model = self.viewModel.dataSource?[indexPath.row] else { return }
+
     }
 }
 
