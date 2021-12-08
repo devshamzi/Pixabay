@@ -25,13 +25,12 @@ class GalleryViewModel: BaseViewModel {
     var reachEnd = false
 
     // MARK: - Functions
-    func getImages(searchTerm: String? = nil)  {
+    func getImages()  {
         guard (page == 1) || (reachEnd == false) else { return }
 
         GalleryServiceUseCase.shared.getImages(filter: self.filterModel,
-                                               page : self.page, pageSize: self.perPage) { [weak self] images in
+                                               page: self.page, pageSize: self.perPage) { [weak self] images in
             guard let self = self else { return }
-            self.dataSource = searchTerm == nil ? self.dataSource : []
             if self.page == 1 {
                 self.dataSource = images
             } else {

@@ -28,8 +28,6 @@ class GalleryViewController: BaseViewController {
         title = "Pixabay"
         bindUI() 
         subscribe()
-        viewModel.getImages()
-
     }
 
     // MARK: - Private Functions
@@ -104,7 +102,9 @@ extension GalleryViewController {
             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] query in
-                self.viewModel.getImages(searchTerm: query)
+                self.viewModel.page = 1
+                self.viewModel.filterModel.searchTerm = query == "" ? nil : query
+                self.viewModel.getImages()
             })
             .disposed(by: bag)
     }

@@ -15,9 +15,8 @@ struct GalleryServiceUseCase: NetworkService {
     private init() { }
 
     func getImages(filter: FilterRequestModel? = nil, page: Int, pageSize: Int, completion: @escaping ([Images]) -> Void) {
-        let parm = filter?.dictionaryRepresentation
-        
-        GalleryService.shared.fetchImages(page: page, searchTerm: "")
+        let parm = filter?.dictionaryRepresentation ?? [:]
+        GalleryService.shared.fetchImages(page: page, pageSize: pageSize, param: parm)
             .subscribe(onNext: { (result) in
                 switch result {
                 case .success(let value):
@@ -31,11 +30,5 @@ struct GalleryServiceUseCase: NetworkService {
                 }
             })
             .disposed(by: bag)
-    }
-
-    private func convertFilterModelIntoDict(filter : FilterRequestModel) -> [String:String]{
-
-
-        return [:]
     }
 }

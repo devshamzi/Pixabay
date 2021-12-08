@@ -20,13 +20,13 @@ public struct ApiDataNetworkConfig: NetworkConfigurable {
     public let queryParameters: [String: String?]
     public let isQueryStringURL: Bool
 
-     public init(url: String,
-                 headers: [String: String] = [:],
-                 queryParameters: [String: String?] = [:],
-                 isQueryStringURL: Bool) {
+    public init(url: String,
+                headers: [String: String] = [:],
+                queryParameters: [String: String?] = [:],
+                isQueryStringURL: Bool) {
         self.url = url
         self.headers = headers
         self.queryParameters = queryParameters
-         self.isQueryStringURL = isQueryStringURL
+        self.isQueryStringURL = isQueryStringURL
     }
 }

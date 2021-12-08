@@ -8,11 +8,10 @@
 import Foundation
 
 struct FilterRequestModel {
-    var searchTerm: String?
+    var searchTerm: String? = nil
     var category: String?
 
     var dictionaryRepresentation: [String: String?] {
-
         return [
             "q" : searchTerm,
             "category" : category
