@@ -35,6 +35,7 @@ class GalleryViewController: BaseViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(GalleryCollectionViewCell.self)
+        collectionView.keyboardDismissMode = .onDrag
         collectionView.delegate = self
         collectionView.dataSource = self
 
