@@ -15,8 +15,13 @@ class DetailImageViewController: BaseViewController {
             profileImage.layer.cornerRadius = profileImage.bounds.width / 2
         }
     }
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var closeBtn: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! {
+        didSet {
+            imageView.sd_imageTransition = .fade
+        }
+    }
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -34,19 +39,30 @@ class DetailImageViewController: BaseViewController {
 
     private func setImageDeatils() {
         DispatchQueue.main.async {
-            guard let imageUrl = self.viewModel.dataSource?.largeImageURL else { return }
-            guard let userImageUrl = self.viewModel.dataSource?.userImageURL else { return }
-            self.imageView.sd_setImage(with: URL(string: (imageUrl)), placeholderImage: UIImage(named: "placeholder.png"))
-            self.profileImage.sd_setImage(with: URL(string: (userImageUrl)), placeholderImage: UIImage(named: "placeholder.png"))
-            self.userNameLabel.text = self.viewModel.dataSource?.user
-
-            self.likeLabel.text = "\(self.viewModel.dataSource?.likes ?? 0)"
-            self.commentLabel.text = "\(self.viewModel.dataSource?.comments ?? 0)"
-            self.downloadLabel.text = "\(self.viewModel.dataSource?.downloads ?? 0)"
-            self.viewLabel.text = "\(self.viewModel.dataSource?.views ?? 0)"
-
+            self.setLargeImage()
+            self.setProfileData()
+            self.setOtherData()
         }
+    }
 
+    private func setLargeImage() {
+        guard let largeImageUrl = self.viewModel.dataSource?.largeImageURL else { return }
+        self.imageView.sd_setImage(with: URL(string: largeImageUrl)) { _, _, _, _ in
+            self.indicator.stopAnimating()
+        }
+    }
+
+    private func setProfileData() {
+        guard let userImageUrl = self.viewModel.dataSource?.userImageURL else { return }
+        self.profileImage.sd_setImage(with: URL(string: (userImageUrl)), placeholderImage: UIImage(named: "placeholder.png"))
+        self.userNameLabel.text = self.viewModel.dataSource?.user
+    }
+
+    private func setOtherData() {
+        self.likeLabel.text = "\(self.viewModel.dataSource?.likes ?? 0)"
+        self.commentLabel.text = "\(self.viewModel.dataSource?.comments ?? 0)"
+        self.downloadLabel.text = "\(self.viewModel.dataSource?.downloads ?? 0)"
+        self.viewLabel.text = "\(self.viewModel.dataSource?.views ?? 0)"
     }
 
     @IBAction func dismissView(_ sender: Any) {

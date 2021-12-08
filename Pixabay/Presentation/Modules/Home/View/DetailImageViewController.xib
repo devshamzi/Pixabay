@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,6 +13,7 @@
                 <outlet property="commentLabel" destination="wk4-6K-vVL" id="r7o-NI-wVS"/>
                 <outlet property="downloadLabel" destination="5k5-ie-mtF" id="08l-s5-8lU"/>
                 <outlet property="imageView" destination="VPm-Q4-W0v" id="RGs-mX-0Mq"/>
+                <outlet property="indicator" destination="k74-ce-uKY" id="AdD-ZG-oVa"/>
                 <outlet property="likeLabel" destination="VI7-tx-fOf" id="DJn-mt-S6F"/>
                 <outlet property="profileImage" destination="Jri-OD-cx3" id="DDu-UC-mgc"/>
                 <outlet property="userNameLabel" destination="6Z8-tn-R8b" id="19z-zG-E5h"/>
@@ -50,7 +52,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="KRO-he-7oM">
-                            <rect key="frame" x="25" y="653" width="364" height="44.5"/>
+                            <rect key="frame" x="25" y="784.5" width="364" height="44.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WAd-PR-QUD">
                                     <rect key="frame" x="0.0" y="0.0" width="81.5" height="44.5"/>
@@ -166,31 +168,34 @@
                         <constraint firstAttribute="trailing" secondItem="KRO-he-7oM" secondAttribute="trailing" constant="25" id="FbU-WK-LBV"/>
                         <constraint firstItem="KRO-he-7oM" firstAttribute="leading" secondItem="WBi-Gg-1hD" secondAttribute="leading" constant="25" id="JLR-o8-J7V"/>
                         <constraint firstItem="HaZ-Ti-Cqi" firstAttribute="leading" secondItem="WBi-Gg-1hD" secondAttribute="leading" constant="20" id="hfM-DU-HpW"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="KRO-he-7oM" secondAttribute="bottom" constant="25" id="iA2-nN-6VO"/>
                         <constraint firstAttribute="trailing" secondItem="few-sY-1L0" secondAttribute="trailing" constant="10" id="jOB-23-UYx"/>
                         <constraint firstItem="few-sY-1L0" firstAttribute="top" secondItem="WBi-Gg-1hD" secondAttribute="topMargin" constant="10" id="tlb-VJ-Nh5"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPm-Q4-W0v">
-                    <rect key="frame" x="0.0" y="273" width="414" height="350"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="350" id="Byw-JT-4mh"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="132" width="414" height="627.5"/>
                 </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="k74-ce-uKY">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" systemColor="opaqueSeparatorColor"/>
+                </activityIndicatorView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="WBi-Gg-1hD" secondAttribute="trailing" id="4qs-a8-i4r"/>
+                <constraint firstItem="k74-ce-uKY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8Hv-yT-YMb"/>
                 <constraint firstItem="cuO-8o-SMV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="91H-73-eDf"/>
                 <constraint firstItem="WBi-Gg-1hD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9EY-9F-suh"/>
                 <constraint firstItem="VPm-Q4-W0v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Avs-f4-Gbq"/>
                 <constraint firstItem="VPm-Q4-W0v" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="K4E-pu-w3h"/>
-                <constraint firstItem="KRO-he-7oM" firstAttribute="top" secondItem="VPm-Q4-W0v" secondAttribute="bottom" constant="30" id="LDY-F8-9ER"/>
                 <constraint firstItem="WBi-Gg-1hD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Onz-oY-MW0"/>
                 <constraint firstAttribute="bottom" secondItem="cuO-8o-SMV" secondAttribute="bottom" id="ead-JK-xXl"/>
                 <constraint firstAttribute="bottom" secondItem="WBi-Gg-1hD" secondAttribute="bottom" id="g4y-eh-jfO"/>
                 <constraint firstItem="cuO-8o-SMV" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="gYz-Di-lyx"/>
-                <constraint firstItem="VPm-Q4-W0v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="klW-9C-g4c"/>
+                <constraint firstItem="k74-ce-uKY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iga-Dd-qtf"/>
+                <constraint firstItem="VPm-Q4-W0v" firstAttribute="top" secondItem="HaZ-Ti-Cqi" secondAttribute="bottom" constant="25" id="pE8-4i-qPi"/>
+                <constraint firstItem="KRO-he-7oM" firstAttribute="top" secondItem="VPm-Q4-W0v" secondAttribute="bottom" constant="25" id="tbG-ys-KR4"/>
                 <constraint firstItem="cuO-8o-SMV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wSi-kp-RMO"/>
-                <constraint firstItem="VPm-Q4-W0v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xzb-dU-iUh"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </view>
@@ -201,5 +206,8 @@
         <image name="love" width="512" height="512"/>
         <image name="views" width="512" height="512"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
