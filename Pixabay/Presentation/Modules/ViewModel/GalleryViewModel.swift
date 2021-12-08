@@ -21,7 +21,7 @@ class GalleryViewModel: BaseViewModel {
     var dataSource: [ImageModel]?
     var filterModel = FilterRequestModel()
     var page = 1
-    var perPage = 20
+    var perPage = 25
     var reachEnd = false
 
     // MARK: - Functions

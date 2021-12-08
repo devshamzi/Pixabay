@@ -19,6 +19,8 @@ extension MainCoordinator {
         let detailVC = DetailImageViewController.instantiate()
         detailVC.coordinator = self
         detailVC.viewModel.dataSource = model
+        detailVC.modalPresentationStyle = .overFullScreen
+        detailVC.modalTransitionStyle = .crossDissolve
         navigationController.present(detailVC, animated: true, completion: nil)
     }
 }

@@ -112,8 +112,6 @@ extension GalleryViewController {
             })
             .disposed(by: bag)
 
-
-
         searchBar.rx.selectedScopeButtonIndex
             .subscribe(onNext: { value in
                 self.viewModel.page = 1
