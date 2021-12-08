@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Images {
+struct ImageModel {
 
     let id: Int?
     let pageURL: String?
@@ -36,5 +36,5 @@ struct Images {
 struct ImagePage {
     let total: Int?
     let totalHits: Int?
-    let hits: [Images]?
+    let hits: [ImageModel]?
 }

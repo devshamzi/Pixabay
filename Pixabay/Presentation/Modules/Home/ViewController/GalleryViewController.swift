@@ -84,7 +84,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let model = self.viewModel.dataSource?[indexPath.row] else { return }
-
+        self.coordinator?.presentImageDetail(model: model)
     }
 }
 

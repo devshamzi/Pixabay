@@ -81,7 +81,7 @@ extension ImagesResponseDTO {
 
 
 extension ImagesResponseDTO.HitsDTO {
-    func toDomain() -> Images {
+    func toDomain() -> ImageModel {
         return .init(id: id,
                      pageURL: pageURL,
                      type: type,

@@ -14,7 +14,7 @@ struct GalleryServiceUseCase: NetworkService {
 
     private init() { }
 
-    func getImages(filter: FilterRequestModel? = nil, page: Int, pageSize: Int, completion: @escaping ([Images]) -> Void) {
+    func getImages(filter: FilterRequestModel? = nil, page: Int, pageSize: Int, completion: @escaping ([ImageModel]) -> Void) {
         let parm = filter?.dictionaryRepresentation ?? [:]
         GalleryService.shared.fetchImages(page: page, pageSize: pageSize, param: parm)
             .subscribe(onNext: { (result) in

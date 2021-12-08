@@ -18,7 +18,7 @@ class GalleryViewModel: BaseViewModel {
 
     // MARK: - Variables
     var onChange = PublishSubject<State>()
-    var dataSource: [Images]?
+    var dataSource: [ImageModel]?
     var filterModel = FilterRequestModel()
     var page = 1
     var perPage = 20

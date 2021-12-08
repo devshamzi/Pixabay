@@ -16,7 +16,7 @@ class GalleryCollectionViewCell: UICollectionViewCell, ReusableView {
         }
     }
 
-    var model: Images? {
+    var model: ImageModel? {
         didSet{
             config()
         }

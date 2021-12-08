@@ -1,22 +1,82 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailImageViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailImageViewController" customModule="Pixabay" customModuleProvider="target">
             <connections>
+                <outlet property="closeBtn" destination="few-sY-1L0" id="wka-0B-3g6"/>
+                <outlet property="imageView" destination="VPm-Q4-W0v" id="RGs-mX-0Mq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuO-8o-SMV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ADm-r2-s4c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBi-Gg-1hD" userLabel="transparentView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="few-sY-1L0">
+                            <rect key="frame" x="354" y="62" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ZeF-P3-z98"/>
+                                <constraint firstAttribute="width" constant="50" id="kFQ-eR-xyu"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system">
+                                <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="dismissView:" destination="-1" eventType="touchUpInside" id="1PY-JX-iDc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="few-sY-1L0" secondAttribute="trailing" constant="10" id="jOB-23-UYx"/>
+                        <constraint firstItem="few-sY-1L0" firstAttribute="top" secondItem="WBi-Gg-1hD" secondAttribute="topMargin" constant="10" id="tlb-VJ-Nh5"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPm-Q4-W0v">
+                    <rect key="frame" x="0.0" y="278" width="414" height="350"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="Byw-JT-4mh"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WBi-Gg-1hD" secondAttribute="trailing" id="4qs-a8-i4r"/>
+                <constraint firstItem="cuO-8o-SMV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="91H-73-eDf"/>
+                <constraint firstItem="WBi-Gg-1hD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9EY-9F-suh"/>
+                <constraint firstItem="VPm-Q4-W0v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Avs-f4-Gbq"/>
+                <constraint firstItem="VPm-Q4-W0v" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="K4E-pu-w3h"/>
+                <constraint firstItem="WBi-Gg-1hD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Onz-oY-MW0"/>
+                <constraint firstAttribute="bottom" secondItem="cuO-8o-SMV" secondAttribute="bottom" id="ead-JK-xXl"/>
+                <constraint firstAttribute="bottom" secondItem="WBi-Gg-1hD" secondAttribute="bottom" id="g4y-eh-jfO"/>
+                <constraint firstItem="cuO-8o-SMV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gYz-Di-lyx"/>
+                <constraint firstItem="VPm-Q4-W0v" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="klW-9C-g4c"/>
+                <constraint firstItem="cuO-8o-SMV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wSi-kp-RMO"/>
+                <constraint firstItem="VPm-Q4-W0v" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xzb-dU-iUh"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </view>
     </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

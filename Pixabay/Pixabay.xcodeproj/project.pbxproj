@@ -13,6 +13,7 @@
 		752322E2275E16F5005E149D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752322E0275E16F5005E149D /* LaunchScreen.storyboard */; };
 		75B73A47275FFF1E008590C9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 75B73A46275FFF1E008590C9 /* RxCocoa */; };
 		75B73A49275FFF1E008590C9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 75B73A48275FFF1E008590C9 /* RxSwift */; };
+		75C3F10E2760BE520038ADC8 /* DetailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3F10D2760BE520038ADC8 /* DetailImageViewModel.swift */; };
 		75CD8DCE275E1D050066685D /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75CD8DCD275E1D050066685D /* GalleryViewController.xib */; };
 		75CD8DD0275E1D860066685D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD8DCF275E1D860066685D /* BaseViewController.swift */; };
 		75CD8DD3275E1E850066685D /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD8DD2275E1E850066685D /* MainCoordinator.swift */; };
@@ -51,6 +52,7 @@
 		752322DE275E16F5005E149D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752322E1275E16F5005E149D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752322E3275E16F5005E149D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75C3F10D2760BE520038ADC8 /* DetailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewModel.swift; sourceTree = "<group>"; };
 		75CD8DCD275E1D050066685D /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryViewController.xib; sourceTree = "<group>"; };
 		75CD8DCF275E1D860066685D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		75CD8DD2275E1E850066685D /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */,
+				75C3F10D2760BE520038ADC8 /* DetailImageViewModel.swift */,
 			);
 			name = ViewModel;
 			path = ../ViewModel;
@@ -457,6 +460,7 @@
 				75D56637275F8DAE00BF9983 /* BaseViewModel.swift in Sources */,
 				75D56639275F905300BF9983 /* GalleryServiceUseCase.swift in Sources */,
 				75D5664A2760AAA200BF9983 /* DetailImageViewController.swift in Sources */,
+				75C3F10E2760BE520038ADC8 /* DetailImageViewModel.swift in Sources */,
 				75D56640275FB5D900BF9983 /* UIColletionView+Extension.swift in Sources */,
 				75CD8DD8275E20740066685D /* UIViewController+Extension.swift in Sources */,
 				75CD8DD3275E1E850066685D /* MainCoordinator.swift in Sources */,
