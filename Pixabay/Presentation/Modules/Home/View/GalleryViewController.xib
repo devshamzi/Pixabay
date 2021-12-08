@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="98"/>
                     <textInputTraits key="textInputTraits"/>
                     <scopeButtonTitles>
-                        <string>Fashion</string>
+                        <string>All</string>
                         <string>Nature</string>
                         <string>Science</string>
                         <string>Travel</string>

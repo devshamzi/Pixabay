@@ -17,11 +17,7 @@ class GalleryViewController: BaseViewController {
             configureHierarchy()
         }
     }
-    @IBOutlet weak var searchBar: UISearchBar! {
-        didSet {
-
-        }
-    }
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: - Variables
     var viewModel = GalleryViewModel()
@@ -112,6 +108,16 @@ extension GalleryViewController {
             .subscribe(onNext: { [unowned self] query in
                 self.viewModel.page = 1
                 self.viewModel.filterModel.searchTerm = query == "" ? nil : query
+                self.viewModel.getImages()
+            })
+            .disposed(by: bag)
+
+
+
+        searchBar.rx.selectedScopeButtonIndex
+            .subscribe(onNext: { value in
+                self.viewModel.page = 1
+                self.viewModel.filterModel.category = Categories(rawValue: value)?.description
                 self.viewModel.getImages()
             })
             .disposed(by: bag)
