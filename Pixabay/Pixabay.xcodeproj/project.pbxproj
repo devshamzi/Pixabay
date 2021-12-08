@@ -38,6 +38,7 @@
 		75D5663C275FB3BD00BF9983 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 75D5663B275FB3BD00BF9983 /* SDWebImage */; };
 		75D5663E275FB48C00BF9983 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5663D275FB48C00BF9983 /* ReusableView.swift */; };
 		75D56640275FB5D900BF9983 /* UIColletionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D5663F275FB5D900BF9983 /* UIColletionView+Extension.swift */; };
+		75D566422760705000BF9983 /* FilterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D566412760705000BF9983 /* FilterRequestModel.swift */; };
 		75ECB64E275EA5CF0051071F /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		75D56638275F905300BF9983 /* GalleryServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryServiceUseCase.swift; sourceTree = "<group>"; };
 		75D5663D275FB48C00BF9983 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		75D5663F275FB5D900BF9983 /* UIColletionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColletionView+Extension.swift"; sourceTree = "<group>"; };
+		75D566412760705000BF9983 /* FilterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRequestModel.swift; sourceTree = "<group>"; };
 		75ECB64D275EA5CF0051071F /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				75CD8E02275F40970066685D /* ImagesModel.swift */,
+				75D566412760705000BF9983 /* FilterRequestModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				752322D6275E16F2005E149D /* AppDelegate.swift in Sources */,
 				75D5663E275FB48C00BF9983 /* ReusableView.swift in Sources */,
 				75CD8DD5275E1EC60066685D /* Coordinator.swift in Sources */,
+				75D566422760705000BF9983 /* FilterRequestModel.swift in Sources */,
 				75CD8DE8275E3DD80066685D /* Connectivity.swift in Sources */,
 				75CD8DD0275E1D860066685D /* BaseViewController.swift in Sources */,
 				75D56635275F835300BF9983 /* GalleryService.swift in Sources */,

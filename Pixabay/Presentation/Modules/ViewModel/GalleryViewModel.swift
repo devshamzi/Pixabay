@@ -19,6 +19,7 @@ class GalleryViewModel: BaseViewModel {
     // MARK: - Variables
     var onChange = PublishSubject<State>()
     var dataSource: [Images] = []
+    var filterModel = FilterRequestModel()
     var page = 1
     var perPage = 20
     var reachEnd = false
@@ -26,31 +27,22 @@ class GalleryViewModel: BaseViewModel {
     // MARK: - Functions
     func getImages(searchTerm: String? = nil)  {
         guard (page == 1) || (reachEnd == false) else { return }
-        GalleryService.shared.fetchImages(page: self.page, searchTerm: searchTerm)
-            .subscribe(onNext: { [weak self] (result) in
-                guard let self = self else {return}
-                switch result {
-                case .success(let value):
-                    if let data = value.toDomain().hits {
-                        self.dataSource = searchTerm == nil ? self.dataSource : []
-                        if self.page == 1 {
-                            self.dataSource = data
-                        } else {
-                            self.dataSource.append(contentsOf: data)
-                        }
-                        if data.count < self.perPage {
-                            self.reachEnd = true
-                        } else {
-                            self.reachEnd = false
-                        }
-                    }
-                    self.onChange.onNext(.success)
 
-                case .failure(let error):
-                    guard let error = error as? CustomError else { return }
-                    self.onChange.onNext(.failure(message: error.localizedDescription))
-                }
-            })
-            .disposed(by: bag)
+        GalleryServiceUseCase.shared.getImages(filter: self.filterModel,
+                                               page : self.page, pageSize: self.perPage) { [weak self] images in
+            guard let self = self else { return }
+            self.dataSource = searchTerm == nil ? self.dataSource : []
+            if self.page == 1 {
+                self.dataSource = images
+            } else {
+                self.dataSource.append(contentsOf: images)
+            }
+            if images.count < self.perPage {
+                self.reachEnd = true
+            } else {
+                self.reachEnd = false
+            }
+            self.onChange.onNext(.success)
+        }
     }
 }
